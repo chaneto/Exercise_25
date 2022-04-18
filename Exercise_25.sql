@@ -17,15 +17,15 @@ VALUES
        ( 'Hans', 2, 3000, 2),
        ( 'Jack', 2, 3000, 4),
        ( 'Hugh', 3, 1500, 5);
-	   
-	   
+
+
 /*Query_1*/
 SELECT *
 FROM employees
 WHERE manager_id IS NULL;	
 
 /*Query_2*/
-SELECT E.name, (SELECT name FROM employees WHERE id = E.manager_id) AS managaer_name
+SELECT E.name, (SELECT name FROM employees WHERE id = E.manager_id) AS manager_name
 FROM employees AS E
 WHERE E.manager_id IS NOT NULL;
 
